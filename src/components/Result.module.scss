@@ -1,0 +1,154 @@
+.wraper {
+  height: auto;
+  width: 100%;
+
+  .title {
+    margin-top: 30px;
+    color: hsl(0, 0%, 45%);
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 20px;
+
+    .title_value {
+      font-weight: 400;
+      color: hsl(0, 0%, 23%);
+    }
+  }
+
+  .result_tab {
+    display: grid;
+    grid-template-columns: 60px auto 80px 80px auto 80px 80px;
+    padding: 10px 0 20px 0;
+  }
+
+  .col {
+    text-align: center;
+    position: relative;
+
+    .col_title {
+      height: 35px;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 35px;
+      text-align: center;
+      white-space: nowrap;
+      border: 1px solid white;
+      background-color: rgb(243, 243, 243);
+    }
+
+    .col_value {
+      height: 40px;
+      min-height: 40px;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 40px;
+      white-space: nowrap;
+      border: 1px solid rgb(243, 243, 243);
+      border-top: none;
+    }
+
+    .col_value_title_journal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .good {
+      color: green;
+    }
+
+    .bad {
+      color: red;
+    }
+
+    .file {
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      transform: translate(-10%, -125%);
+      padding: 5px;
+      color: rgb(63, 63, 63);
+      line-height: 10px;
+      opacity: 0.4;
+      transition: 0.3s;
+    }
+    .file:hover {
+      color: hsl(210, 81%, 47%);
+      opacity: 1;
+    }
+  }
+
+  .col_hide_or_show {
+    display: none;
+  }
+
+  .present_result {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    padding: 10px 0 20px 0;
+  }
+
+  .small_title {
+    color: hsl(0, 0%, 45%);
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: left;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .result_tab {
+      grid-template-columns: 60px auto 80px 80px;
+    }
+
+    .col {
+      .col_value_title_journal {
+        line-height: normal;
+        text-align: left;
+        padding-left: 10px;
+      }
+
+      .col_value {
+        white-space: normal;
+      }
+    }
+
+    .col_hide_or_show {
+      display: block;
+      visibility: hidden;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .col {
+      .col_value_title_journal {
+        display: block;
+        line-height: normal;
+        text-align: left;
+        padding-left: 10px;
+      }
+
+      .col_value {
+        white-space: normal;
+        height: auto;
+      }
+    }
+
+    .file {
+      visibility: hidden;
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    .col {
+      .col_title {
+        font-size: 0.85rem;
+      }
+
+      .col_value {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
