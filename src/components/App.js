@@ -313,7 +313,6 @@ class App extends Component {
             state={this.state}
             handleChange={this.handleChange}
             handlePaste={this.handlePaste}
-            handlePasteBtn={this.handlePasteBtn}
             handleClick={this.handleClick}
           />
           {this.state.result === "undefined" ? null : (
