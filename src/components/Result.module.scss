@@ -18,7 +18,7 @@
 
   .result_tab {
     display: grid;
-    grid-template-columns: 60px auto 80px 80px auto 80px 80px;
+    grid-template-columns: auto 120px 120px;
     padding: 10px 0 20px 0;
   }
 
@@ -50,8 +50,14 @@
 
     .col_value_title_journal {
       display: flex;
-      justify-content: center;
       align-items: center;
+      padding-left: 15px;
+    }
+
+    .points_and_position {
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 0.85rem;
       text-align: center;
     }
 
@@ -81,7 +87,8 @@
   }
 
   .col_hide_or_show {
-    display: none;
+    display: block;
+    visibility: hidden;
   }
 
   .present_result {
@@ -99,7 +106,7 @@
 
   @media only screen and (max-width: 700px) {
     .result_tab {
-      grid-template-columns: 60px auto 80px 80px;
+      grid-template-columns: auto 100px 100px;
     }
 
     .col {
