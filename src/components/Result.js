@@ -11,10 +11,20 @@ import wykaz_4E from "../assets/wykazy/01_grudnia_2021r.xlsx";
 import wykaz_5E from "../assets/wykazy/21_grudnia_2021r.xlsx";
 
 const Result = (props) => {
-  const { id, title, issn, e_issn, title_2, issn_2, e_issn_2 } =
-    props.state.result;
+  const { title, issn, e_issn, title_2, issn_2, e_issn_2 } = props.state.result;
 
-  const { list_1, list_2, list_3, list_4, list_5 } = props.state;
+  const {
+    list_1,
+    list_2,
+    list_3,
+    list_4,
+    list_5,
+    id_1,
+    id_2,
+    id_3,
+    id_4,
+    id_5,
+  } = props.state;
 
   return (
     <>
@@ -30,10 +40,12 @@ const Result = (props) => {
         </div>
         {/* Tytuł pierwszy */}
         <div className={styles.result_tab}>
-          <div className={styles.col}>
+          {/* <div className={styles.col}>
             <p className={styles.col_title}>Lp.</p>
-            <div className={styles.col_value}><p>{id}</p></div>
-          </div>
+            <div className={styles.col_value}>
+              <p>{id}</p>
+            </div>
+          </div> */}
           <div className={styles.col}>
             <p className={styles.col_title}>Tytuł czasopisma</p>
             <div
@@ -52,10 +64,10 @@ const Result = (props) => {
           </div>
 
           {/* Tytuł drugi */}
-          <div className={`${styles.col} ${styles.col_hide_or_show}`}>
+          {/* <div className={`${styles.col} ${styles.col_hide_or_show}`}>
             <p className={styles.col_title}>Lp.</p>
             <p className={styles.col_value}>{id}</p>
-          </div>
+          </div> */}
           <div className={styles.col}>
             <p className={styles.col_title}>Drugi tytuł</p>
             <p
@@ -90,17 +102,25 @@ const Result = (props) => {
               <AiOutlineFileSearch />
             </a>
             <p className={styles.col_title}>31.VII.2019</p>
-            <p className={styles.col_value}>
+            <div className={styles.col_value}>
               {list_1 === "empty" ? null : list_1 === true ? (
-                <span className={styles.good}>
-                  <ImCheckmark />
-                </span>
+                <>
+                  <span className={styles.good}>
+                    <ImCheckmark />
+                  </span>
+                  <div className={styles.points_and_position}>
+                    <span className={styles.points}>
+                      {"pkt " + props.state.punkty_1}
+                    </span>
+                    <span className={styles.position}>{"poz. " + id_1}</span>
+                  </div>
+                </>
               ) : (
                 <span className={styles.bad}>
                   <ImCross />
                 </span>
               )}
-            </p>
+            </div>
           </div>
           <div className={styles.col}>
             <a
@@ -112,17 +132,25 @@ const Result = (props) => {
               <AiOutlineFileSearch />
             </a>
             <p className={styles.col_title}>18.XII.2019</p>
-            <p className={styles.col_value}>
+            <div className={styles.col_value}>
               {list_2 === "empty" ? null : list_2 === true ? (
-                <span className={styles.good}>
-                  <ImCheckmark />
-                </span>
+                <>
+                  <span className={styles.good}>
+                    <ImCheckmark />
+                  </span>
+                  <div className={styles.points_and_position}>
+                    <span className={styles.points}>
+                      {"pkt " + props.state.punkty_2}
+                    </span>
+                    <span className={styles.position}>{"poz. " + id_2}</span>
+                  </div>
+                </>
               ) : (
                 <span className={styles.bad}>
                   <ImCross />
                 </span>
               )}
-            </p>
+            </div>
           </div>
           <div className={styles.col}>
             <a
@@ -134,17 +162,25 @@ const Result = (props) => {
               <AiOutlineFileSearch />
             </a>
             <p className={styles.col_title}>18.II.2021</p>
-            <p className={styles.col_value}>
+            <div className={styles.col_value}>
               {list_3 === "empty" ? null : list_3 === true ? (
-                <span className={styles.good}>
-                  <ImCheckmark />
-                </span>
+                <>
+                  <span className={styles.good}>
+                    <ImCheckmark />
+                  </span>
+                  <div className={styles.points_and_position}>
+                    <span className={styles.points}>
+                      {"pkt " + props.state.punkty_3}
+                    </span>
+                    <span className={styles.position}>{"poz. " + id_3}</span>
+                  </div>
+                </>
               ) : (
                 <span className={styles.bad}>
                   <ImCross />
                 </span>
               )}
-            </p>
+            </div>
           </div>
           <div className={styles.col}>
             <a
@@ -156,17 +192,25 @@ const Result = (props) => {
               <AiOutlineFileSearch />
             </a>
             <p className={styles.col_title}>01.XII.2021</p>
-            <p className={styles.col_value}>
+            <div className={styles.col_value}>
               {list_4 === "empty" ? null : list_4 === true ? (
-                <span className={styles.good}>
-                  <ImCheckmark />
-                </span>
+                <>
+                  <span className={styles.good}>
+                    <ImCheckmark />
+                  </span>
+                  <div className={styles.points_and_position}>
+                    <span className={styles.points}>
+                      {"pkt " + props.state.punkty_4}
+                    </span>
+                    <span className={styles.position}>{"poz. " + id_4}</span>
+                  </div>
+                </>
               ) : (
                 <span className={styles.bad}>
                   <ImCross />
                 </span>
               )}
-            </p>
+            </div>
           </div>
           <div className={styles.col}>
             <a
@@ -178,17 +222,25 @@ const Result = (props) => {
               <AiOutlineFileSearch />
             </a>
             <p className={styles.col_title}>21.XII.2021</p>
-            <p className={styles.col_value}>
+            <div className={styles.col_value}>
               {list_5 === "empty" ? null : list_5 === true ? (
-                <span className={styles.good}>
-                  <ImCheckmark />
-                </span>
+                <>
+                  <span className={styles.good}>
+                    <ImCheckmark />
+                  </span>
+                  <div className={styles.points_and_position}>
+                    <span className={styles.points}>
+                      {"pkt " + props.state.punkty_5}
+                    </span>
+                    <span className={styles.position}>{"poz. " + id_5}</span>
+                  </div>
+                </>
               ) : (
                 <span className={styles.bad}>
                   <ImCross />
                 </span>
               )}
-            </p>
+            </div>
           </div>
         </div>
       </div>

@@ -21,6 +21,12 @@ class App extends Component {
     list_4: "empty",
     list_5: "empty",
 
+    id_1: "",
+    id_2: "",
+    id_3: "",
+    id_4: "",
+    id_5: "",
+
     punkty_1: "",
     punkty_2: "",
     punkty_3: "",
@@ -287,12 +293,15 @@ class App extends Component {
     if (fraza !== "") {
       for (let i = 0; i < wykazy.length; i++) {
         const resultCheck = findIndex(fraza, wykazy[i]);
-        if (resultCheck !== -1 && wpis === "") {
-          console.log(`Data taken from list no. ${listNumbers[i]}`);
+        if (resultCheck !== -1) {
+          // console.log(`Data taken from list no. ${listNumbers[i]}`);
           wpis = Object.values(wykazy[i])[resultCheck];
-          this.setState({ result: wpis, [`list_${listNumbers[i]}`]: true });
-        } else if (resultCheck !== -1) {
-          this.setState({ [`list_${listNumbers[i]}`]: true });
+          this.setState({
+            result: wpis,
+            [`list_${listNumbers[i]}`]: true,
+            [`id_${listNumbers[i]}`]: wpis.id,
+            [`punkty_${listNumbers[i]}`]: wpis.punkty,
+          });
         } else {
           this.setState({ [`list_${listNumbers[i]}`]: false });
         }
@@ -313,7 +322,6 @@ class App extends Component {
             state={this.state}
             handleChange={this.handleChange}
             handlePaste={this.handlePaste}
-            handlePasteBtn={this.handlePasteBtn}
             handleClick={this.handleClick}
           />
           {this.state.result === "undefined" ? null : (
