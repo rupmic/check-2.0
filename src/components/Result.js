@@ -248,4 +248,4 @@ const Result = (props) => {
   );
 };
 
-export default Result;
+export { Result };

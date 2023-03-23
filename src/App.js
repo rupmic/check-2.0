@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import styles from "./App.module.scss";
-import Search from "./Search";
-import Result from "./Result";
+import { Search } from "./components/Search";
+import { Result } from "./components/Result";
 
-import wykaz_1 from "../assets/wykaz31072019.json";
-import wykaz_2 from "../assets/wykaz18122019.json";
-import wykaz_3 from "../assets/wykaz18022021.json";
-import wykaz_4 from "../assets/wykaz01122021.json";
-import wykaz_5 from "../assets/wykaz21122021.json";
+import wykaz_1 from "./assets/wykaz31072019.json";
+import wykaz_2 from "./assets/wykaz18122019.json";
+import wykaz_3 from "./assets/wykaz18022021.json";
+import wykaz_4 from "./assets/wykaz01122021.json";
+import wykaz_5 from "./assets/wykaz21122021.json";
 
 class App extends Component {
   state = {
@@ -343,4 +343,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export { App };
