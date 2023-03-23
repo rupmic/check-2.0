@@ -3,6 +3,7 @@ import styles from "./Result.module.scss";
 import { ImCheckmark } from "react-icons/im";
 import { ImCross } from "react-icons/im";
 import { AiOutlineFileSearch } from "react-icons/ai";
+import { TbListSearch } from "react-icons/tb";
 
 import wykaz_1E from "../assets/wykazy/31_lipca_2019r.xlsx";
 import wykaz_2E from "../assets/wykazy/18_grudnia_2019r.xlsx";
@@ -26,6 +27,20 @@ const Result = (props) => {
     id_5,
   } = props.state;
 
+  let containsLetter = false;
+  let link = "";
+
+  const regex = /[a-zA-Z]/;
+  if (regex.test(props.state.serchedValue)) {
+    containsLetter = true;
+  }
+
+  if (containsLetter === false) {
+    link = `http://punktacjaczasopism.pl/rez.php?fromgbl=1&search_mode=issn&tekst=${props.state.serchedValue}`;
+  } else if (containsLetter === true) {
+    link = `http://punktacjaczasopism.pl/rez.php?fromgbl=1&search_mode=fraza&tekst=${props.state.serchedValue}`;
+  }
+
   return (
     <>
       <div className={styles.wraper}>
@@ -35,6 +50,13 @@ const Result = (props) => {
             <span className={styles.title_value}>
               {props.state.serchedValue}
             </span>
+            {props.state.serchedValue ? (
+              <a href={link} target="_blank" rel="noreferrer">
+                <button>
+                  <TbListSearch />
+                </button>
+              </a>
+            ) : null}
           </p>
           <p className={styles.small_title}>Znalezione czasopismo:</p>
         </div>
