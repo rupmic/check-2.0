@@ -276,7 +276,7 @@ const Result = (props) => {
             >
               <AiOutlineFileSearch />
             </a>
-            <p className={styles.col_title}>17.07.2023</p>
+            <p className={styles.col_title}>17.VII.2023</p>
             <div className={styles.col_value}>
               {list_6 === "empty" ? null : list_6 === true ? (
                 <>
