@@ -10,6 +10,7 @@ import wykaz_2E from "../assets/wykazy/18_grudnia_2019r.xlsx";
 import wykaz_3E from "../assets/wykazy/18_luty_2021r.xlsx";
 import wykaz_4E from "../assets/wykazy/01_grudnia_2021r.xlsx";
 import wykaz_5E from "../assets/wykazy/21_grudnia_2021r.xlsx";
+import wykaz_6E from "../assets/wykazy/17_lipca_2023r.xlsx";
 
 const Result = (props) => {
   const { title, issn, e_issn, title_2, issn_2, e_issn_2 } = props.state.result;
@@ -20,11 +21,13 @@ const Result = (props) => {
     list_3,
     list_4,
     list_5,
+    list_6,
     id_1,
     id_2,
     id_3,
     id_4,
     id_5,
+    id_6,
   } = props.state;
 
   let containsLetter = false;
@@ -255,6 +258,36 @@ const Result = (props) => {
                       {"pkt " + props.state.punkty_5}
                     </span>
                     <span className={styles.position}>{"poz. " + id_5}</span>
+                  </div>
+                </>
+              ) : (
+                <span className={styles.bad}>
+                  <ImCross />
+                </span>
+              )}
+            </div>
+          </div>
+          <div className={styles.col}>
+            <a
+              className={styles.file}
+              href={wykaz_6E}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiOutlineFileSearch />
+            </a>
+            <p className={styles.col_title}>17.07.2023</p>
+            <div className={styles.col_value}>
+              {list_6 === "empty" ? null : list_6 === true ? (
+                <>
+                  <span className={styles.good}>
+                    <ImCheckmark />
+                  </span>
+                  <div className={styles.points_and_position}>
+                    <span className={styles.points}>
+                      {"pkt " + props.state.punkty_6}
+                    </span>
+                    <span className={styles.position}>{"poz. " + id_6}</span>
                   </div>
                 </>
               ) : (

@@ -1,3 +1,7 @@
+$numOfCol: 6; // Ilość kolumn
+
+$weight: calc(100%/$numOfCol); // Trzeba dodać kolejne weight jak się zmieni ilość kolumn
+
 .wraper {
   height: auto;
   width: 100%;
@@ -114,7 +118,7 @@
 
   .present_result {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: $weight $weight $weight $weight $weight $weight;
     padding: 10px 0 20px 0;
   }
 
