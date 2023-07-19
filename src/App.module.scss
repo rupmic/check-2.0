@@ -47,9 +47,8 @@ html {
     color: hsl(210, 81%, 47%);
   }
 
-  .info {
+  .info{
     margin-top: 20px;
-    padding: 15px;
     font-weight: 300;
     color: hsl(0, 0%, 36%);
     opacity: 0.5;
@@ -67,6 +66,14 @@ html {
 
   .info:hover {
     opacity: 1;
+  }
+
+  .update{
+    font-weight: 300;
+    color: hsl(0, 0%, 36%);
+    opacity: 0.5;
+    font-size: 0.9rem;
+    transition: 0.3s;
   }
 
   @media only screen and (max-width: 400px) {

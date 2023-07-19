@@ -72,7 +72,7 @@ const Result = (props) => {
             </div>
           </div> */}
           <div className={styles.col}>
-            <p className={styles.col_title}>Tytuł czasopisma</p>
+            <p className={`${styles.col_title} ${styles.title_journal}`}>Tytuł czasopisma</p>
             <div
               className={`${styles.col_value} ${styles.col_value_title_journal}`}
             >
@@ -94,7 +94,7 @@ const Result = (props) => {
             <p className={styles.col_value}>{id}</p>
           </div> */}
           <div className={styles.col}>
-            <p className={styles.col_title}>Drugi tytuł</p>
+            <p className={`${styles.col_title} ${styles.title_journal}`}>Drugi tytuł</p>
             <p
               className={`${styles.col_value} ${styles.col_value_title_journal}`}
             >

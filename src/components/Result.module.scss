@@ -1,5 +1,4 @@
 $numOfCol: 6; // Ilość kolumn
-
 $weight: calc(100%/$numOfCol); // Trzeba dodać kolejne weight jak się zmieni ilość kolumn
 
 .wraper {
@@ -60,6 +59,11 @@ $weight: calc(100%/$numOfCol); // Trzeba dodać kolejne weight jak się zmieni i
       white-space: nowrap;
       border: 1px solid white;
       background-color: rgb(243, 243, 243);
+    }
+
+    .title_journal{
+      text-align: left;
+      padding-left: 10px;
     }
 
     .col_value {
@@ -152,7 +156,7 @@ $weight: calc(100%/$numOfCol); // Trzeba dodać kolejne weight jak się zmieni i
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     .col {
       .col_value_title_journal {
         display: block;

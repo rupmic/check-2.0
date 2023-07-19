@@ -141,6 +141,7 @@ class App extends Component {
               kliknij tutaj
             </a>
           </p>
+          <p className={styles.update}>Ostatnia aktualizacja: 19.07.2023</p>
         </div>
       </>
     );
