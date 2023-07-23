@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import styles from "./App.module.scss";
 import { Search } from "./components/Search";
 import { Result } from "./components/Result";
+import { Footer } from "./components/Footer";
 
 import wykaz_1 from "./assets/wykaz31072019.json";
 import wykaz_2 from "./assets/wykaz18122019.json";
-import wykaz_3 from "./assets/wykaz18022021.json";
-import wykaz_4 from "./assets/wykaz01122021.json";
-import wykaz_5 from "./assets/wykaz21122021.json";
-import wykaz_6 from "./assets/wykaz17072023.json";
+import wykaz_3 from "./assets/wykaz09022021.json";
+import wykaz_4 from "./assets/wykaz18022021.json";
+import wykaz_5 from "./assets/wykaz01122021.json";
+import wykaz_6 from "./assets/wykaz21122021.json";
+import wykaz_7 from "./assets/wykaz17072023.json";
 
 class App extends Component {
   state = {
@@ -22,6 +24,7 @@ class App extends Component {
     list_4: "empty",
     list_5: "empty",
     list_6: "empty",
+    list_7: "empty",
 
     id_1: "",
     id_2: "",
@@ -29,6 +32,7 @@ class App extends Component {
     id_4: "",
     id_5: "",
     id_6: "",
+    id_7: "",
 
     punkty_1: "",
     punkty_2: "",
@@ -36,6 +40,7 @@ class App extends Component {
     punkty_4: "",
     punkty_5: "",
     punkty_6: "",
+    punkty_7: "",
   };
 
   handleClick = (e) => {
@@ -58,6 +63,7 @@ class App extends Component {
       list_4: "empty",
       list_5: "empty",
       list_6: "empty",
+      list_7: "empty",
     });
   };
 
@@ -73,6 +79,7 @@ class App extends Component {
       list_4: "empty",
       list_5: "empty",
       list_6: "empty",
+      list_7: "empty",
     });
   };
 
@@ -89,8 +96,8 @@ class App extends Component {
       );
     };
 
-    const wykazy = [wykaz_1, wykaz_2, wykaz_3, wykaz_4, wykaz_5, wykaz_6];
-    const listNumbers = [1, 2, 3, 4, 5, 6];
+    const wykazy = [wykaz_1, wykaz_2, wykaz_3, wykaz_4, wykaz_5, wykaz_6, wykaz_7];
+    const listNumbers = [1, 2, 3, 4, 5, 6, 7];
     const fraza = this.state.inputValue;
     let wpis = "";
 
@@ -117,11 +124,10 @@ class App extends Component {
 
   render() {
     return (
-      <>
         <div className={styles.wraper}>
           <h2>CHECK.this.Journal</h2>
           <h3>WYSZUKIWARKA CZASOPISM PUNKTOWANYCH</h3>
-          <h3>od wykazu z dnia 31-07-2019</h3>
+          <h3>od wykazu z dnia 31 lipca 2019 r.</h3>
           <Search
             state={this.state}
             handleChange={this.handleChange}
@@ -131,19 +137,8 @@ class App extends Component {
           {this.state.result === "undefined" ? null : (
             <Result state={this.state} />
           )}
-          <p className={styles.info}>
-            Wyszukiwarka punktowanych czasopism naukowych [2010-2019]:{" "}
-            <a
-              href="http://punktacjaczasopism.pl/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              kliknij tutaj
-            </a>
-          </p>
-          <p className={styles.update}>Ostatnia aktualizacja: 19.07.2023</p>
+          <Footer/>
         </div>
-      </>
     );
   }
 }

@@ -3,14 +3,15 @@ import styles from "./Result.module.scss";
 import { ImCheckmark } from "react-icons/im";
 import { ImCross } from "react-icons/im";
 import { AiOutlineFileSearch } from "react-icons/ai";
-import { TbListSearch } from "react-icons/tb";
+import { CgSearchLoading } from "react-icons/cg";
 
 import wykaz_1E from "../assets/wykazy/31_lipca_2019r.xlsx";
 import wykaz_2E from "../assets/wykazy/18_grudnia_2019r.xlsx";
-import wykaz_3E from "../assets/wykazy/18_luty_2021r.xlsx";
-import wykaz_4E from "../assets/wykazy/01_grudnia_2021r.xlsx";
-import wykaz_5E from "../assets/wykazy/21_grudnia_2021r.xlsx";
-import wykaz_6E from "../assets/wykazy/17_lipca_2023r.xlsx";
+import wykaz_3E from "../assets/wykazy/09_luty_2021r.xlsx";
+import wykaz_4E from "../assets/wykazy/18_luty_2021r.xlsx";
+import wykaz_5E from "../assets/wykazy/01_grudnia_2021r.xlsx";
+import wykaz_6E from "../assets/wykazy/21_grudnia_2021r.xlsx";
+import wykaz_7E from "../assets/wykazy/17_lipca_2023r.xlsx";
 
 const Result = (props) => {
   const { title, issn, e_issn, title_2, issn_2, e_issn_2 } = props.state.result;
@@ -22,12 +23,14 @@ const Result = (props) => {
     list_4,
     list_5,
     list_6,
+    list_7,
     id_1,
     id_2,
     id_3,
     id_4,
     id_5,
     id_6,
+    id_7,
   } = props.state;
 
   let containsLetter = false;
@@ -48,76 +51,43 @@ const Result = (props) => {
     <>
       <div className={styles.wraper}>
         <div>
-          <p className={styles.title}>
-            Wynik dla:{" "}
-            <span className={styles.title_value}>
-              {props.state.serchedValue}
-            </span>
+          <span className={styles.search_preview}>SZUKANA FRAZA:<span className={styles.search_preview_value}>{props.state.serchedValue}</span>
             {props.state.serchedValue ? (
-              <a href={link} target="_blank" rel="noreferrer">
-                <button>
-                  <TbListSearch />
+              <a href={link} target="_blank" rel="noreferrer" title="Wyszukaj w PCsearch">
+                <button className={styles.search_preview_btn}>
+                  <CgSearchLoading />
                 </button>
               </a>
             ) : null}
-          </p>
-          <p className={styles.small_title}>Znalezione czasopismo:</p>
+          </span>
         </div>
-        {/* Tytuł pierwszy */}
-        <div className={styles.result_tab}>
-          {/* <div className={styles.col}>
-            <p className={styles.col_title}>Lp.</p>
-            <div className={styles.col_value}>
-              <p>{id}</p>
-            </div>
-          </div> */}
-          <div className={styles.col}>
-            <p className={`${styles.col_title} ${styles.title_journal}`}>Tytuł czasopisma</p>
-            <div
-              className={`${styles.col_value} ${styles.col_value_title_journal}`}
-            >
-              <p>{title}</p>
-            </div>
-          </div>
-          <div className={styles.col}>
-            <p className={styles.col_title}>ISSN</p>
-            <p className={styles.col_value}>{issn}</p>
-          </div>
-          <div className={styles.col}>
-            <p className={styles.col_title}>e-ISSN</p>
-            <p className={styles.col_value}>{e_issn}</p>
-          </div>
 
-          {/* Tytuł drugi */}
-          {/* <div className={`${styles.col} ${styles.col_hide_or_show}`}>
-            <p className={styles.col_title}>Lp.</p>
-            <p className={styles.col_value}>{id}</p>
-          </div> */}
-          <div className={styles.col}>
-            <p className={`${styles.col_title} ${styles.title_journal}`}>Drugi tytuł</p>
-            <p
-              className={`${styles.col_value} ${styles.col_value_title_journal}`}
-            >
-              {title_2}
-            </p>
+        <div className={styles.single_row}>
+          <div className={styles.single_row_block_lp}>
+            1
           </div>
-          <div className={styles.col}>
-            <p className={styles.col_title}>ISSN</p>
-            <p className={styles.col_value}>{issn_2}</p>
-          </div>
-
-          <div className={styles.col}>
-            <p className={styles.col_title}>e-ISSN</p>
-            <p className={styles.col_value}>{e_issn_2}</p>
+          <div className={styles.single_row_block_title_and_issn}>
+              <div className={styles.first_line}>
+                <span className={styles.title}>Tytuł I:</span><span className={`${styles.title_value} ${styles.value}`}>{title}</span>
+                <span className={styles.issn}>ISSN:<span className={styles.value}>{issn}</span></span>
+                <span className={styles.eissn}>e-ISSN:<span className={styles.value}>{e_issn}</span></span>
+              </div>
+              <div className={styles.second_line}>
+                <span className={styles.title}>Tytuł II:</span><span className={`${styles.title_value} ${styles.value}`}>{title_2}</span>
+                <span className={styles.issn}>ISSN:<span className={styles.value}>{issn_2}</span></span>
+                <span className={styles.eissn}>e-ISSN:<span className={styles.value}>{e_issn_2}</span></span>
+              </div>
           </div>
         </div>
 
-        <p className={styles.small_title}>
+        <p className={styles.present_result_title}>
           Występowanie czasopisma w poszczególnych wykazach:
         </p>
 
-        <div className={styles.present_result}>
-          <div className={styles.col}>
+        <div className={styles.present_results_wrap}>
+
+          <div className={styles.result_block}>
+            <p className={styles.col_title}>31.VII.2019</p>
             <a
               className={styles.file}
               href={wykaz_1E}
@@ -126,7 +96,6 @@ const Result = (props) => {
             >
               <AiOutlineFileSearch />
             </a>
-            <p className={styles.col_title}>31.VII.2019</p>
             <div className={styles.col_value}>
               {list_1 === "empty" ? null : list_1 === true ? (
                 <>
@@ -147,7 +116,9 @@ const Result = (props) => {
               )}
             </div>
           </div>
-          <div className={styles.col}>
+
+          <div className={styles.result_block}>
+            <p className={styles.col_title}>18.XII.2019</p>
             <a
               className={styles.file}
               href={wykaz_2E}
@@ -156,7 +127,6 @@ const Result = (props) => {
             >
               <AiOutlineFileSearch />
             </a>
-            <p className={styles.col_title}>18.XII.2019</p>
             <div className={styles.col_value}>
               {list_2 === "empty" ? null : list_2 === true ? (
                 <>
@@ -177,7 +147,9 @@ const Result = (props) => {
               )}
             </div>
           </div>
-          <div className={styles.col}>
+
+          <div className={styles.result_block}>
+            <p className={styles.col_title}>09.II.2021</p>
             <a
               className={styles.file}
               href={wykaz_3E}
@@ -186,7 +158,6 @@ const Result = (props) => {
             >
               <AiOutlineFileSearch />
             </a>
-            <p className={styles.col_title}>18.II.2021</p>
             <div className={styles.col_value}>
               {list_3 === "empty" ? null : list_3 === true ? (
                 <>
@@ -207,7 +178,9 @@ const Result = (props) => {
               )}
             </div>
           </div>
-          <div className={styles.col}>
+
+          <div className={styles.result_block}>
+            <p className={styles.col_title}>18.II.2021</p>
             <a
               className={styles.file}
               href={wykaz_4E}
@@ -216,7 +189,6 @@ const Result = (props) => {
             >
               <AiOutlineFileSearch />
             </a>
-            <p className={styles.col_title}>01.XII.2021</p>
             <div className={styles.col_value}>
               {list_4 === "empty" ? null : list_4 === true ? (
                 <>
@@ -237,7 +209,9 @@ const Result = (props) => {
               )}
             </div>
           </div>
-          <div className={styles.col}>
+
+          <div className={styles.result_block}>
+            <p className={styles.col_title}>01.XII.2021</p>
             <a
               className={styles.file}
               href={wykaz_5E}
@@ -246,7 +220,6 @@ const Result = (props) => {
             >
               <AiOutlineFileSearch />
             </a>
-            <p className={styles.col_title}>21.XII.2021</p>
             <div className={styles.col_value}>
               {list_5 === "empty" ? null : list_5 === true ? (
                 <>
@@ -267,7 +240,9 @@ const Result = (props) => {
               )}
             </div>
           </div>
-          <div className={styles.col}>
+
+          <div className={styles.result_block}>
+            <p className={styles.col_title}>21.XII.2021</p>
             <a
               className={styles.file}
               href={wykaz_6E}
@@ -276,7 +251,6 @@ const Result = (props) => {
             >
               <AiOutlineFileSearch />
             </a>
-            <p className={styles.col_title}>17.VII.2023</p>
             <div className={styles.col_value}>
               {list_6 === "empty" ? null : list_6 === true ? (
                 <>
@@ -297,6 +271,38 @@ const Result = (props) => {
               )}
             </div>
           </div>
+
+          <div className={styles.result_block}>
+            <p className={styles.col_title}>17.VII.2023</p>
+            <a
+              className={styles.file}
+              href={wykaz_7E}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiOutlineFileSearch />
+            </a>
+            <div className={styles.col_value}>
+              {list_7 === "empty" ? null : list_7 === true ? (
+                <>
+                  <span className={styles.good}>
+                    <ImCheckmark />
+                  </span>
+                  <div className={styles.points_and_position}>
+                    <span className={styles.points}>
+                      {"pkt " + props.state.punkty_7}
+                    </span>
+                    <span className={styles.position}>{"poz. " + id_7}</span>
+                  </div>
+                </>
+              ) : (
+                <span className={styles.bad}>
+                  <ImCross />
+                </span>
+              )}
+            </div>
+          </div>
+
         </div>
       </div>
     </>

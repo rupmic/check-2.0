@@ -33,8 +33,12 @@
       border-right: 0;
       box-shadow: 0px 0px 0px hsla(0, 0%, 0%, 0.01);
       transition: .2s;
+      outline-style: none;
 
       &:focus{
+        border-top: 3px solid rgb(186, 186, 186);
+        border-left: 3px solid rgb(186, 186, 186);
+        border-bottom: 3px solid rgb(186, 186, 186);
         box-shadow: 0px 0px 20px hsla(0, 0%, 0%, 0.2);
       }
     }

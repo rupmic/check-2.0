@@ -1,0 +1,41 @@
+@use '../styles/sass/variables' as *;
+
+.footer_wrap{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    padding: $spacingDesktopLarge;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.footer_info{
+    font-weight: 300;
+    color: hsl(0, 0%, 36%);
+    opacity: 0.5;
+    font-size: 1rem;
+    transition: 0.3s;
+
+    a {
+      text-decoration: none;
+      color: hsl(210, 81%, 47%);
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .footer_info:hover {
+    opacity: 1;
+  }
+
+  .footer_update{
+    font-weight: 300;
+    color: hsl(0, 0%, 36%);
+    opacity: 0.5;
+    font-size: 0.8rem;
+    transition: 0.3s;
+  }
