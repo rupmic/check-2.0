@@ -96,7 +96,15 @@ class App extends Component {
       );
     };
 
-    const wykazy = [wykaz_1, wykaz_2, wykaz_3, wykaz_4, wykaz_5, wykaz_6, wykaz_7];
+    const wykazy = [
+      wykaz_1,
+      wykaz_2,
+      wykaz_3,
+      wykaz_4,
+      wykaz_5,
+      wykaz_6,
+      wykaz_7,
+    ];
     const listNumbers = [1, 2, 3, 4, 5, 6, 7];
     const fraza = this.state.inputValue;
     let wpis = "";
@@ -124,21 +132,21 @@ class App extends Component {
 
   render() {
     return (
-        <div className={styles.wraper}>
-          <h2>CHECK.this.Journal</h2>
-          <h3>WYSZUKIWARKA CZASOPISM PUNKTOWANYCH</h3>
-          <h3>od wykazu z dnia 31 lipca 2019 r.</h3>
-          <Search
-            state={this.state}
-            handleChange={this.handleChange}
-            handlePaste={this.handlePaste}
-            handleClick={this.handleClick}
-          />
-          {this.state.result === "undefined" ? null : (
-            <Result state={this.state} />
-          )}
-          <Footer/>
-        </div>
+      <div className={styles.wraper}>
+        <h2>CHECK.this.Journal</h2>
+        <h3>WYSZUKIWARKA CZASOPISM PUNKTOWANYCH</h3>
+        <h3>od wykazu z dnia 31 lipca 2019 r.</h3>
+        <Search
+          state={this.state}
+          handleChange={this.handleChange}
+          handlePaste={this.handlePaste}
+          handleClick={this.handleClick}
+        />
+        {this.state.result === "undefined" ? null : (
+          <Result state={this.state} />
+        )}
+        <Footer />
+      </div>
     );
   }
 }

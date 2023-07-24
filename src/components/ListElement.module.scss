@@ -1,0 +1,94 @@
+@use "../styles/sass/variables" as *;
+
+.result_block {
+  position: relative;
+
+  .title_and_attachment_block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid white;
+    background-color: $whiteBackground;
+  }
+
+  .col_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 35px;
+    text-align: center;
+    white-space: nowrap;
+    color: $colorTextGrayDark;
+  }
+
+  .attachment {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    padding: (0.5 * $spacingTablet);
+    color: $colorTextGrayLight;
+    opacity: 0.4;
+    transition: 0.3s;
+  }
+
+  .attachment:hover {
+    color: hsl(210, 81%, 47%);
+    opacity: 1;
+  }
+
+  .col_value {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    padding: $spacingTablet;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 300;
+    border: 1px solid rgb(243, 243, 243);
+    border-top: none;
+    height: 65px;
+  }
+
+  .col_value_title_journal {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+  }
+
+  .points_and_position {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .good {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+  }
+
+  .bad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .attachment {
+    visibility: hidden;
+  }
+}
