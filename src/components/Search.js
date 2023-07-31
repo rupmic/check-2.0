@@ -1,16 +1,97 @@
-import React from "react";
-import styles from "./Search.module.scss";
+import React, { useState } from "react";
+import styles from "../styles/Search.module.scss";
 import { BiSearch } from "react-icons/bi";
 import { HiArrowRight } from "react-icons/hi";
+import { GiSadCrab } from "react-icons/gi";
 
-const Search = ({
-  state: { inputValue },
-  handleChange,
-  handlePaste,
-  handleClick,
-}) => {
+import { ResultsList } from "./ResultsList";
+
+import db from "../assets/db/db.json";
+
+const Search = ({ setData, setValue }) => {
+  const [searchBarValue, setSearchBarValue] = useState("");
+  const [notFound, setNotFound] = useState("");
+  const [results, setResults] = useState([]);
+  const [info, setInfo] = useState("");
+
+  const handleChange = (e) => {
+    const searchBarValue = e.target.value;
+    setSearchBarValue(searchBarValue);
+    setResults("");
+    setNotFound("");
+    setInfo("");
+  };
+
+  const handlePaste = (e) => {
+    const copyText = e.clipboardData.getData("Text");
+    const better = copyText.replace(/[^0-9-a-zA-Z ]+/g, "");
+    setSearchBarValue(better);
+    setResults("");
+    setInfo("");
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setInfo("");
+    handleSearch();
+  };
+
+  const handleSearch = () => {
+    const searchTerm = searchBarValue.trim().toLowerCase();
+    if (searchTerm === "") {
+      setResults([]);
+      return;
+    } else {
+      setValue(searchBarValue);
+    }
+
+    const filteredData = db.filter((item) => {
+      const titleMatches = item.title?.toLowerCase().includes(searchTerm);
+      const issnMatches = item.issn?.toLowerCase().includes(searchTerm);
+      const eIssnMatches = item.e_issn?.toLowerCase().includes(searchTerm);
+      const title2Matches = item.title_2?.toLowerCase().includes(searchTerm);
+      const issn2Matches = item.issn_2?.toLowerCase().includes(searchTerm);
+      const eIssn2Matches = item.e_issn_2?.toLowerCase().includes(searchTerm);
+
+      return (
+        titleMatches ||
+        issnMatches ||
+        eIssnMatches ||
+        title2Matches ||
+        issn2Matches ||
+        eIssn2Matches
+      );
+    });
+
+    if (!filteredData.length) {
+      setNotFound(true);
+      setData("");
+      return;
+    }
+
+    if (filteredData.length > 50) {
+      const newData = filteredData.slice(0, 50);
+      setResults(newData);
+      setInfo("Zbyt wiele wyników. Listę ograniczono do 50 pozycji.");
+      return;
+    }
+
+    if (filteredData.length === 1) {
+      const singleJournalAsObject = filteredData[0];
+      setData(singleJournalAsObject);
+    } else {
+      setResults(filteredData);
+    }
+  };
+
+  const handleSelect = (id) => {
+    const selectedJournal = results.find((result) => result.id === id);
+    setData(selectedJournal);
+    setValue(searchBarValue);
+  };
+
   return (
-    <>
+    <div className={styles.search_wrapper}>
       <form className={styles.search_bar}>
         <label htmlFor="search">
           <BiSearch className={styles.search_icon} />
@@ -20,8 +101,9 @@ const Search = ({
             type="text"
             maxLength="100"
             placeholder="issn, tytuł czasopisma"
+            title="issn, tytuł czasopisma"
             autoComplete="off"
-            value={inputValue}
+            value={searchBarValue}
             onChange={handleChange}
             onPaste={handlePaste}
           />
@@ -35,7 +117,24 @@ const Search = ({
           <HiArrowRight />
         </button>
       </form>
-    </>
+      {notFound ? (
+        <span className={styles.not_found}>
+          <GiSadCrab />
+          <span
+            className={styles.description}
+          >{`Podana fraza "${searchBarValue}" nie została odnaleziona.`}</span>
+        </span>
+      ) : null}
+      {results && results.length > 0 ? (
+        <ResultsList
+          results={results}
+          setResults={setResults}
+          setSearchBarValue={setSearchBarValue}
+          handleSelect={handleSelect}
+          info={info}
+        />
+      ) : null}
+    </div>
   );
 };
 

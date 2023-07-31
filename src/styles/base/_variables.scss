@@ -1,0 +1,35 @@
+// Variables
+
+// Spacing
+$spacingMobile: 8px;
+$spacingTablet: 10px;
+$spacingDesktope: 15px;
+$spacingDesktopLarge: 20px;
+
+// Font
+$fontSizeXS: 12px;
+$fontSizeS: 14px;
+$fontSize: 16px;
+$fontSizeM: 18px;
+$fontSizeL: 20px;
+$fontSizeXL: 22px;
+
+// Colors
+$colorMain: #fff;
+$colorBlue: #1778d9;
+$colorAlt: #000;
+$colorTextGrayLight: #737373;
+$colorTextGrayDark: #3b3b3b;
+
+// Backgrounds Colors
+$TEST: #5ae2aa;
+$mainBackground: #e4e5ec;
+$whiteBackground: #f5f7fa;
+
+// numbers of columns
+$numOfCol: 7;
+$weight: calc(100% / $numOfCol);
+
+@mixin marginLeft {
+  margin-left: 5px;
+}

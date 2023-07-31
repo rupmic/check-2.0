@@ -1,0 +1,50 @@
+@use "../styles/base/variables" as *;
+
+.header_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.big_title {
+  position: relative;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: hsl(210, 81%, 47%);
+  font-family: "Fredoka One", sans-serif;
+}
+
+.version {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  transform: translate(100%, 100%);
+  color: red;
+}
+
+.small_title {
+  font-size: 1rem;
+  font-weight: 300;
+  color: hsl(210, 81%, 47%);
+}
+
+@media all and (min-width: 475px) {
+  .big_title {
+    font-size: 3rem;
+  }
+}
+
+@media all and (min-width: 550px) {
+  .big_title {
+    font-size: 3.5rem;
+  }
+}
+
+@media all and (min-width: 700px) {
+  .big_title {
+    font-size: 4.5rem;
+  }
+}

@@ -1,0 +1,89 @@
+@use "../styles/base/variables" as *;
+
+.results_list_wrapper {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: calc(100% - 59px);
+  padding: $spacingTablet;
+  background-color: hsl(225, 18%, 96%);
+  border-radius: 5px;
+  border: 1px solid hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.results_items {
+  list-style: none;
+  max-height: 408px;
+  overflow-y: hidden;
+  overflow: scroll;
+}
+
+.results_item {
+  position: relative;
+  display: flex;
+  color: rgb(159, 159, 159);
+  padding: $spacingTablet;
+  white-space: nowrap;
+  border-radius: 5px;
+  transition: 0.2s;
+  overflow: hidden;
+  margin-right: (2 * $spacingTablet);
+
+  &:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 100%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 $spacingTablet;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+.result_item_title {
+  flex-grow: 1;
+  margin-left: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+}
+
+.result_item_issn {
+  margin-right: $spacingTablet;
+  margin-left: (0.5 * $spacingTablet);
+}
+
+.result_item_eissn {
+  margin-right: $spacingTablet;
+}
+
+.result_item_value {
+  color: rgb(27, 27, 27);
+  margin-left: 2px;
+}
+
+.information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: $spacingTablet;
+  padding: 5px 0;
+  color: hsl(0, 0%, 55%);
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.information_icon {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  margin-right: $spacingTablet;
+  color: hsl(0, 0%, 55%);
+}
