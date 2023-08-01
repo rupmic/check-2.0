@@ -17,7 +17,7 @@ const Footer = () => {
         .
       </p>
       <p className={styles.footer_update}>
-        CHECK.this.Journal - aktualizacja: 31 lipca 2023 r.
+        CHECK.this.Journal - aktualizacja: 01 sierpnia 2023 r.
       </p>
     </div>
   );

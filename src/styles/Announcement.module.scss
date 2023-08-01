@@ -2,11 +2,12 @@
 
 .announcement_wrapper {
   position: absolute;
-  top: 10px;
+  bottom: 100px;
   right: 0px;
-  max-width: 405px;
-  background-color: aliceblue;
-  padding: 5px 15px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 15px 25px;
+  display: none;
 }
 
 .title {
@@ -28,8 +29,8 @@
   transform: rotate(90deg) translateY(-10px);
 }
 
-@media (max-width: 1300px) {
+@media (min-height: 940px) {
   .announcement_wrapper {
-    display: none;
+    display: block;
   }
 }

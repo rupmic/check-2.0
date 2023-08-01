@@ -13,7 +13,7 @@ const Announcement = () => {
       </p>
       <p className={styles.p_block}>Dziękujemy za zaufanie!</p>
       <p className={styles.p_block}>
-        Jednoosobowy zespół techniczny.<span className={styles.icon}>:)</span>
+        Jednoosobowy zespół techniczny<span className={styles.icon}>:)</span>
       </p>
     </div>
   );
