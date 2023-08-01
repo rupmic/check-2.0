@@ -103,6 +103,7 @@ const Search = ({ setData, setValue }) => {
             placeholder="issn, tytuł czasopisma"
             title="issn, tytuł czasopisma"
             autoComplete="off"
+            autoFocus
             value={searchBarValue}
             onChange={handleChange}
             onPaste={handlePaste}

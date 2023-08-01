@@ -48,3 +48,11 @@
     font-size: 4.5rem;
   }
 }
+
+@media (min-width: 1300px) {
+  .header_wrapper {
+    position: relative;
+    left: 100px;
+    margin-right: auto;
+  }
+}
