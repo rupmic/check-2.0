@@ -1,15 +1,17 @@
 @use "../styles/base/variables" as *;
 
 .footer_wrap {
-  position: fixed;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   align-items: center;
   padding: $spacingDesktopLarge;
+  margin-top: auto;
+  height: 90px;
   width: 100%;
+  border-top: 2px solid $mainBackground;
   background-color: rgb(255, 255, 255);
+  z-index: 0;
 }
 
 .footer_info {

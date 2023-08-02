@@ -1,19 +1,20 @@
 @use "../styles/base/variables" as *;
 
 .wraper {
-  height: auto;
+  height: 100%;
   width: 100%;
 
   .search_preview {
     display: inline-flex;
     align-items: baseline;
-    margin-top: calc(3 * $spacingTablet);
+    margin-top: calc($spacingTablet);
     color: hsl(0, 0%, 45%);
     font-size: 1.2rem;
     font-weight: 300;
     text-align: left;
-    margin-bottom: calc(3 * $spacingTablet);
+    margin-bottom: calc($spacingTablet);
     height: 30px;
+    z-index: 2;
 
     .search_preview_value {
       color: hsl(0, 0%, 23%);
