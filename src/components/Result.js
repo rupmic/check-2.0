@@ -100,19 +100,18 @@ const Result = ({ data, value }) => {
         <div>
           <span className={styles.search_preview}>
             SZUKANA FRAZA:
-            <span className={styles.search_preview_value}>
-              {/* {data.title ? data.title : data.title_2} */}
-              {value}
-            </span>
+            <span className={styles.search_preview_value}>{value}</span>
             {value ? (
               <a
+                className={styles.pcsearch_link}
                 href={link}
                 target="_blank"
                 rel="noreferrer"
                 title="Wyszukaj w PCsearch"
               >
-                <button className={styles.search_preview_btn}>
+                <button className={styles.pcsearch_button}>
                   <CgSearchLoading />
+                  <span className={styles.pcsearch_text}>PCsearch</span>
                 </button>
               </a>
             ) : null}

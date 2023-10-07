@@ -19,8 +19,10 @@
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: 800;
   line-height: 0.8rem;
+  font-family: "Yantramanav", sans-serif;
   transform: translate(100%, 100%);
   color: red;
 }
@@ -31,19 +33,25 @@
   color: hsl(210, 81%, 47%);
 }
 
-@media all and (min-width: 475px) {
+@media all and (min-width: 470px) {
   .big_title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
 @media all and (min-width: 550px) {
   .big_title {
+    font-size: 3rem;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .big_title {
     font-size: 3.5rem;
   }
 }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 780px) {
   .big_title {
     font-size: 4.5rem;
   }

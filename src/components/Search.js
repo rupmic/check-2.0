@@ -121,9 +121,10 @@ const Search = ({ setData, setValue }) => {
       {notFound ? (
         <span className={styles.not_found}>
           <GiSadCrab />
-          <span
-            className={styles.description}
-          >{`Podana fraza "${searchBarValue}" nie została odnaleziona.`}</span>
+          <span className={styles.description}>
+            Podana fraza "<span className={styles.fraze}>{searchBarValue}</span>
+            " nie została odnaleziona.
+          </span>
         </span>
       ) : null}
       {results && results.length > 0 ? (

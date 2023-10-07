@@ -3,10 +3,12 @@
 .wraper {
   height: 100%;
   width: 100%;
+  margin-bottom: 50px;
 
   .search_preview {
     display: inline-flex;
     align-items: baseline;
+    width: 100%;
     margin-top: calc($spacingTablet);
     color: hsl(0, 0%, 45%);
     font-size: 1.2rem;
@@ -25,25 +27,32 @@
       margin-left: 5px;
     }
 
-    .search_preview_btn {
+    .pcsearch_link {
+      margin-left: 10px;
+    }
+
+    .pcsearch_button {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      margin-left: 10px;
-      padding: 3px;
+      padding: 3px 6px 3px 3px;
       font-size: 1rem;
       font-family: inherit;
       border-radius: 4px;
-      cursor: pointer;
       color: hsla(210, 81%, 47%, 0.5);
       background-color: hsl(0, 0%, 100%);
-      border: 1px solid hsla(210, 81%, 47%, 0.5);
       transition: 0.3s;
+      cursor: pointer;
     }
 
-    .search_preview_btn:hover {
+    .pcsearch_button:hover {
       color: hsl(0, 0%, 100%);
       background-color: hsl(210, 81%, 47%);
+    }
+
+    .pcsearch_text {
+      margin-top: 2px;
+      font-size: $fontSizeS;
     }
   }
 

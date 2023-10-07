@@ -6,7 +6,7 @@ import { HiOutlineInformationCircle } from "react-icons/hi";
 const ResultsList = ({
   results,
   setResults,
-  setSearchBarValue,
+  // setSearchBarValue, // to keep the typed phrase in "searchBarValue"
   handleSelect,
   info,
 }) => {
@@ -17,7 +17,7 @@ const ResultsList = ({
         key={result.id}
         onClick={() => {
           handleSelect(result.id);
-          setSearchBarValue("");
+          // setSearchBarValue(""); // to keep the typed phrase in "searchBarValue"
           setResults("");
         }}
       >
@@ -25,13 +25,13 @@ const ResultsList = ({
         {result.title ? (
           <>
             <span className={styles.result_item_title}>{result.title}</span>
-            {result.issn ? (
+            {result.issn && result.issn !== " " ? (
               <span className={styles.result_item_issn}>
                 ISSN:
                 <span className={styles.result_item_value}>{result.issn}</span>
               </span>
             ) : null}
-            {result.e_issn ? (
+            {result.e_issn && result.e_issn !== " " ? (
               <span className={styles.result_item_eissn}>
                 e-ISSN:
                 <span className={styles.result_item_value}>
@@ -43,7 +43,7 @@ const ResultsList = ({
         ) : (
           <>
             <span className={styles.result_item_title}>{result.title_2}</span>
-            {result.issn ? (
+            {result.issn && result.issn !== " " ? (
               <span className={styles.result_item_issn}>
                 ISSN:
                 <span className={styles.result_item_value}>
@@ -51,7 +51,7 @@ const ResultsList = ({
                 </span>
               </span>
             ) : null}
-            {result.e_issn ? (
+            {result.e_issn && result.e_issn !== " " ? (
               <span className={styles.result_item_eissn}>
                 e-ISSN:
                 <span className={styles.result_item_value}>

@@ -6,7 +6,7 @@ const Header = () => {
     <div className={styles.header_wrapper}>
       <h2 className={styles.big_title}>
         CHECK.this.Journal
-        <span className={styles.version}>BETA</span>
+        <span className={styles.version}>2.0</span>
       </h2>
       <h3 className={styles.small_title}>
         WYSZUKIWARKA CZASOPISM PUNKTOWANYCH
