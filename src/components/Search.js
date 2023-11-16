@@ -6,7 +6,7 @@ import { GiSadCrab } from "react-icons/gi";
 
 import { ResultsList } from "./ResultsList";
 
-import db from "../assets/db/db.json";
+import db from "../assets/db/mini_db_8.json";
 
 const Search = ({ setData, setValue }) => {
   const [searchBarValue, setSearchBarValue] = useState("");

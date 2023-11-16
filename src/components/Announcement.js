@@ -18,7 +18,7 @@ const Announcement = () => {
     >
       <div className={styles.header_block}>
         <h4 className={styles.title}>
-          Nowa wersja modułu wyszukiwania czasopism
+          Aktualizacja Bazy Danych – Nowy Ministerialny Wykaz Czasopism z 9 Listopada 2023 roku.
         </h4>
         <button
           className={styles.close_button}
@@ -29,8 +29,7 @@ const Announcement = () => {
       </div>
 
       <p className={styles.p_block}>
-        Zaktualizowaliśmy moduł wyszukiwania czasopism. Prosimy o aktywne
-        testowanie i zgłaszanie uwag, abyśmy mogli poprawić ewentualne błędy.
+        Informujemy, że nasza baza danych została właśnie zaktualizowana o najnowszy ministerialny wykaz czasopism z dnia 9 listopada 2023 roku.
       </p>
       <p className={styles.p_block}>Dziękujemy za zaufanie!</p>
       <p className={styles.p_block}>
