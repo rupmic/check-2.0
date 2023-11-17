@@ -2,12 +2,13 @@ import React from "react";
 import styles from "../styles/ListElement.module.scss";
 import { ImCheckmark, ImCross } from "react-icons/im";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
+import { formatDateRoman } from "../shared/formatDate.js";
 
 const ListElement = ({ date, points, href }) => {
   return (
     <div className={styles.result_block}>
       <div className={styles.title_and_attachment_block}>
-        <p className={styles.col_title}>{date}</p>
+        <p className={styles.col_title}>{formatDateRoman(date)}</p>
         <a
           className={styles.attachment}
           href={href}

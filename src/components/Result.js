@@ -8,7 +8,7 @@ import list_18_02_2021 from "../assets/wykazyXLSX/18_luty_2021r.xlsx";
 import list_01_12_2021 from "../assets/wykazyXLSX/01_grudnia_2021r.xlsx";
 import list_21_12_2021 from "../assets/wykazyXLSX/21_grudnia_2021r.xlsx";
 import list_17_07_2023 from "../assets/wykazyXLSX/17_lipca_2023r.xlsx";
-import list_09_11_2023 from "../assets/wykazyXLSX/09_listopada_2023r.xlsx";
+import list_03_11_2023 from "../assets/wykazyXLSX/03_listopada_2023r.xlsx";
 
 import { CgSearchLoading } from "react-icons/cg";
 
@@ -74,9 +74,9 @@ const Result = ({ data, value }) => {
     },
     {
       id: 8,
-      date: "09-11-2023",
+      date: "03-11-2023",
       points: null,
-      href: list_09_11_2023,
+      href: list_03_11_2023,
     },
   ];
   // Po dodaniu nowego wykazu czasopism punktowanych trzeba zmienić też: 
