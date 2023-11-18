@@ -43,7 +43,7 @@ const ResultsList = ({
         ) : (
           <>
             <span className={styles.result_item_title}>{result.title_2}</span>
-            {result.issn && result.issn !== " " ? (
+            {result.issn_2 && result.issn_2 !== " " ? (
               <span className={styles.result_item_issn}>
                 ISSN:
                 <span className={styles.result_item_value}>
