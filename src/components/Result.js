@@ -9,6 +9,7 @@ import list_01_12_2021 from "../assets/wykazyXLSX/01_grudnia_2021r.xlsx";
 import list_21_12_2021 from "../assets/wykazyXLSX/21_grudnia_2021r.xlsx";
 import list_17_07_2023 from "../assets/wykazyXLSX/17_lipca_2023r.xlsx";
 import list_03_11_2023 from "../assets/wykazyXLSX/03_listopada_2023r.xlsx";
+import list_05_01_2024 from "../assets/wykazyXLSX/05_stycznia_2024r.xlsx";
 
 import { CgSearchLoading } from "react-icons/cg";
 
@@ -78,10 +79,13 @@ const Result = ({ data, value }) => {
       points: null,
       href: list_03_11_2023,
     },
+    {
+      id: 9,
+      date: "05-01-2024",
+      points: null,
+      href: list_05_01_2024,
+    },
   ];
-  // Po dodaniu nowego wykazu czasopism punktowanych trzeba zmienić też: 
-  // #1 "numbers of columns" w pliku '_variables.scss' oraz
-  // #2 dodać $weight w 'Result.module.scss' w klasie '.present_results_wrap'
 
   const getPointsForDate = (date) => {
     const entry = data.update.find((item) => item.update_date === date);
