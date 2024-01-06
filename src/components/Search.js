@@ -6,20 +6,7 @@ import { GiSadCrab } from "react-icons/gi";
 
 import { ResultsList } from "./ResultsList";
 
-import db from "../assets/db/mini_db_9.json";
-
-  // Po dodaniu nowego wykazu czasopism punktowanych trzeba zmienić też:
-  // #1 W pliku Result.js dodać kod:
-  // {
-  //   id: 9,
-  //   date: "05-01-2024",
-  //   points: null,
-  //   href: list_05_01_2024,
-  // },
-  // #2 "numbers of columns" w pliku '_variables.scss' oraz
-  // #3 dodać $weight w 'Result.module.scss' w klasie '.present_results_wrap'
-
-const Search = ({ setData, setValue }) => {
+const Search = ({ setData, setValue, jsonData }) => {
   const [searchBarValue, setSearchBarValue] = useState("");
   const [notFound, setNotFound] = useState("");
   const [results, setResults] = useState([]);
@@ -56,7 +43,7 @@ const Search = ({ setData, setValue }) => {
       setValue(searchBarValue);
     }
 
-    const filteredData = db.filter((item) => {
+    const filteredData = jsonData.filter((item) => {
       const titleMatches = item.title?.toLowerCase().includes(searchTerm);
       const issnMatches = item.issn?.toLowerCase().includes(searchTerm);
       const eIssnMatches = item.e_issn?.toLowerCase().includes(searchTerm);
