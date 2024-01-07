@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/check-2.0/static/css/main.882c81f0.css",
-    "main.js": "/check-2.0/static/js/main.1c524b14.js",
+    "main.js": "/check-2.0/static/js/main.25cd23c4.js",
     "static/media/05_stycznia_2024r.xlsx": "/check-2.0/static/media/05_stycznia_2024r.e4bb451a2a2919912f61.xlsx",
     "static/media/17_lipca_2023r.xlsx": "/check-2.0/static/media/17_lipca_2023r.0c7515b050c2b843c0b7.xlsx",
     "static/media/03_listopada_2023r.xlsx": "/check-2.0/static/media/03_listopada_2023r.b22d25c7e2fb260ee00d.xlsx",
@@ -13,10 +13,10 @@
     "static/media/09_luty_2021r.xlsx": "/check-2.0/static/media/09_luty_2021r.a35a1e00d512989f9375.xlsx",
     "index.html": "/check-2.0/index.html",
     "main.882c81f0.css.map": "/check-2.0/static/css/main.882c81f0.css.map",
-    "main.1c524b14.js.map": "/check-2.0/static/js/main.1c524b14.js.map"
+    "main.25cd23c4.js.map": "/check-2.0/static/js/main.25cd23c4.js.map"
   },
   "entrypoints": [
     "static/css/main.882c81f0.css",
-    "static/js/main.1c524b14.js"
+    "static/js/main.25cd23c4.js"
   ]
 }
