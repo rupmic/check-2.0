@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/Announcement.module.scss";
 
-// import Cookies from "universal-cookie";
-
 import { BiShow, BiHide } from "react-icons/bi";
 
 const Announcement = () => {

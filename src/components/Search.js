@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/Search.module.scss";
 import { BiSearch } from "react-icons/bi";
 import { HiArrowRight } from "react-icons/hi";
@@ -12,10 +12,28 @@ const Search = ({ setData, setValue, jsonData }) => {
   const [results, setResults] = useState([]);
   const [info, setInfo] = useState("");
 
+  const resultsListRef = useRef(null);
+
+  const handleClickOutsideResultList = (e) => {
+    if (
+      resultsListRef.current &&
+      !resultsListRef.current.contains(e.target)
+    ) {
+      setResults([]);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutsideResultList);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutsideResultList);
+    };
+  }, []);
+
   const handleChange = (e) => {
     const searchBarValue = e.target.value;
     setSearchBarValue(searchBarValue);
-    setResults("");
+    setResults([]);
     setNotFound("");
     setInfo("");
   };
@@ -24,7 +42,7 @@ const Search = ({ setData, setValue, jsonData }) => {
     const copyText = e.clipboardData.getData("Text");
     const better = copyText.replace(/[^0-9-a-zA-Z ]+/g, "");
     setSearchBarValue(better);
-    setResults("");
+    setResults([]);
     setInfo("");
   };
 
@@ -125,14 +143,16 @@ const Search = ({ setData, setValue, jsonData }) => {
           </span>
         </span>
       ) : null}
-      {results && results.length > 0 ? (
-        <ResultsList
-          results={results}
-          setResults={setResults}
-          setSearchBarValue={setSearchBarValue}
-          handleSelect={handleSelect}
-          info={info}
-        />
+      {results && results.length > 1 ? (
+        <div ref={resultsListRef}>
+          <ResultsList
+            results={results}
+            setResults={setResults}
+            setSearchBarValue={setSearchBarValue}
+            handleSelect={handleSelect}
+            info={info}
+          />
+        </div>
       ) : null}
     </div>
   );
