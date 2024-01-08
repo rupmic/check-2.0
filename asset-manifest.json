@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/check-2.0/static/css/main.882c81f0.css",
-    "main.js": "/check-2.0/static/js/main.310740f8.js",
+    "main.css": "/check-2.0/static/css/main.f04995b7.css",
+    "main.js": "/check-2.0/static/js/main.64d7de79.js",
     "static/media/05_stycznia_2024r.xlsx": "/check-2.0/static/media/05_stycznia_2024r.e4bb451a2a2919912f61.xlsx",
     "static/media/17_lipca_2023r.xlsx": "/check-2.0/static/media/17_lipca_2023r.0c7515b050c2b843c0b7.xlsx",
     "static/media/03_listopada_2023r.xlsx": "/check-2.0/static/media/03_listopada_2023r.b22d25c7e2fb260ee00d.xlsx",
@@ -12,11 +12,11 @@
     "static/media/31_lipca_2019r.xlsx": "/check-2.0/static/media/31_lipca_2019r.2d9f1bcfd24628f16565.xlsx",
     "static/media/09_luty_2021r.xlsx": "/check-2.0/static/media/09_luty_2021r.a35a1e00d512989f9375.xlsx",
     "index.html": "/check-2.0/index.html",
-    "main.882c81f0.css.map": "/check-2.0/static/css/main.882c81f0.css.map",
-    "main.310740f8.js.map": "/check-2.0/static/js/main.310740f8.js.map"
+    "main.f04995b7.css.map": "/check-2.0/static/css/main.f04995b7.css.map",
+    "main.64d7de79.js.map": "/check-2.0/static/js/main.64d7de79.js.map"
   },
   "entrypoints": [
-    "static/css/main.882c81f0.css",
-    "static/js/main.310740f8.js"
+    "static/css/main.f04995b7.css",
+    "static/js/main.64d7de79.js"
   ]
 }
