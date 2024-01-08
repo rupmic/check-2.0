@@ -6,11 +6,13 @@ import { App } from "./App";
 
 import TagManager from "react-gtm-module";
 
-const tagManagerArgs = {
-  gtmId: "GTM-P43QFPZX",
-};
+if (process.env.NODE_ENV === "production") {
+  const tagManagerArgs = {
+    gtmId: "GTM-P43QFPZX",
+  };
 
-TagManager.initialize(tagManagerArgs);
+  TagManager.initialize(tagManagerArgs);
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
