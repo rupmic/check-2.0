@@ -5,6 +5,18 @@ import { HiOutlineDocumentDownload } from "react-icons/hi";
 import { formatDateRoman } from "../shared/formatDate.js";
 
 const ListElement = ({ date, points, href }) => {
+  // GA4
+  const handleDownloadXlsxFile = () => {
+    const fullPath = href;
+    const fileNameWithExtension = fullPath.split("/").pop();
+    const fileName = fileNameWithExtension.split(".")[0];
+
+    window.dataLayer.push({
+      event: "download_xlsx_file",
+      file: fileName,
+    });
+  };
+
   return (
     <div className={styles.result_block}>
       <div className={styles.title_and_attachment_block}>
@@ -14,6 +26,7 @@ const ListElement = ({ date, points, href }) => {
           href={href}
           target="_blank"
           rel="noreferrer"
+          onClick={handleDownloadXlsxFile}
         >
           <HiOutlineDocumentDownload />
         </a>

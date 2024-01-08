@@ -3,6 +3,8 @@ import styles from "./styles/App.module.scss";
 
 import { initDB, loadAndCacheJSON } from "./shared/indexedDBHelpers";
 
+import TagManager from "react-gtm-module";
+
 import { Header } from "./components/Header";
 import { Search } from "./components/Search";
 import { Result } from "./components/Result";
@@ -18,7 +20,13 @@ const App = () => {
     process.env.NODE_ENV === "production"
       ? "https://rupmic.github.io/check-2.0/mini_db_9.json"
       : "check-2.0/mini_db_9.json";
-  
+
+  const tagManagerArgs = {
+    gtmId: "GTM-P43QFPZX",
+  };
+
+  TagManager.initialize(tagManagerArgs);
+
   useEffect(() => {
     async function fetchData() {
       const db = await initDB();
