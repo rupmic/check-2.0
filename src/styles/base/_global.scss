@@ -8,3 +8,11 @@ body {
 button {
   border: 0px solid $colorAlt;
 }
+
+a {
+  &:link,
+  &:visited,
+  &:active {
+    color: $colorBlue;
+  }
+}

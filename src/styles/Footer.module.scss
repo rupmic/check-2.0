@@ -4,7 +4,6 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  // row-gap: 10px;
   align-items: center;
   justify-content: space-between;
   padding: $spacingTablet $spacingDesktope;
@@ -14,26 +13,6 @@
   border-top: 2px solid $mainBackground;
   background-color: $colorMain;
   z-index: 0;
-
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   background-color: $colorMain;
-  //   top: 0;
-  //   left: 100%;
-  //   height: 100%;
-  //   width: 100vw;
-  // }
-
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   background-color: $colorMain;
-  //   top: 0;
-  //   right: 100%;
-  //   height: 100%;
-  //   width: 100vw;
-  // }
 }
 
 .footer_info {

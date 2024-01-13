@@ -1,0 +1,91 @@
+@use "../styles/base/variables" as *;
+
+.cookies_wrap {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+  right: $spacingDesktopLarge;
+  bottom: $spacingDesktopLarge;
+  width: 340px;
+  padding: $spacingDesktopLarge;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.2);
+}
+
+.cookies_icon_and_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+  line-height: 1.3rem;
+  color: rgb(82, 11, 11);
+}
+
+.cookies_icon {
+  font-size: 40px;
+  color: rgb(82, 11, 11);
+}
+
+.cookies_title {
+  font-size: 30px;
+  font-weight: $fontWeightNormal;
+  font-family: "Lato";
+}
+
+.cookies_paragraph {
+  font-size: $fontSize;
+  font-weight: $fontWeightSemiLight;
+  margin: $spacingTablet 0 $spacingTablet 0;
+  padding: 0 $spacingMobile;
+  line-height: 1.3rem;
+}
+
+.cookies_btn_more {
+  display: block;
+  width: fit-content;
+  background-color: unset;
+  font-weight: $fontWeightNormal;
+  color: $colorBlue;
+  padding-left: 5px;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.cookies_btn_accept {
+  display: block;
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: $spacingDesktope;
+  padding: ($spacingMobile) (2.5 * $spacingMobile);
+  width: fit-content;
+  font-family: inherit;
+  font-size: $fontSize;
+  font-weight: $fontWeightBold;
+  text-transform: uppercase;
+  color: $colorTextGrayLighter;
+  background-color: $colorBlue;
+  border-radius: 3px;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $colorLightBlue;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .cookies_wrap {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+  }
+}

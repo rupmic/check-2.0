@@ -1,0 +1,122 @@
+@use "../styles/base/variables" as *;
+
+.cookies_wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(8px) grayscale(70%);
+  z-index: 2;
+}
+
+.cookies_detail_modal {
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+  right: $spacingDesktopLarge;
+  bottom: $spacingDesktopLarge;
+  max-width: 800px;
+  max-height: 80vh;
+  padding: $spacingDesktopLarge (2 * $spacingDesktopLarge);
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.2);
+  overflow: auto;
+}
+
+.cookies_main_title {
+  font-size: 24px;
+  font-weight: $fontWeightMedium;
+  font-family: "Lato";
+  margin: $spacingDesktope 0;
+  text-align: center;
+  color: $colorBlue;
+}
+
+.cookies_title {
+  font-size: 20px;
+  font-weight: $fontWeightNormal;
+  font-family: "Lato";
+  margin-top: $spacingDesktope;
+}
+
+.cookies_paragraph {
+  font-size: $fontSize;
+  font-weight: $fontWeightSemiLight;
+  margin: $spacingTablet 0 $spacingTablet 0;
+  line-height: 1.5rem;
+
+  ul {
+    list-style-position: inside;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.cookies_btns_wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: $spacingDesktopLarge;
+  justify-content: center;
+}
+
+.cookies_btn_accept {
+  display: block;
+  padding: ($spacingTablet) (2.5 * $spacingTablet);
+  width: fit-content;
+  font-family: inherit;
+  font-size: $fontSize;
+  font-weight: $fontWeightBold;
+  text-transform: uppercase;
+  color: $colorTextGrayLighter;
+  background-color: $colorBlue;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.cookies_btn_declaim {
+  display: block;
+  padding: ($spacingTablet) (2.5 * $spacingTablet);
+  width: fit-content;
+  font-family: inherit;
+  font-size: $fontSize;
+  font-weight: $fontWeightBold;
+  text-transform: uppercase;
+  color: $colorBlue;
+  text-decoration: none;
+  background-color: $colorTextGrayLighter;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .cookies_detail_modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 100vh;
+    padding: $spacingDesktopLarge;
+  }
+}

@@ -1,12 +1,10 @@
-// Variables
-
 // Spacing
 $spacingMobile: 8px;
 $spacingTablet: 10px;
 $spacingDesktope: 15px;
 $spacingDesktopLarge: 20px;
 
-// Font
+// Font size
 $fontSizeXS: 12px;
 $fontSizeS: 14px;
 $fontSize: 16px;
@@ -14,9 +12,18 @@ $fontSizeM: 18px;
 $fontSizeL: 20px;
 $fontSizeXL: 22px;
 
+// Font weight
+$fontWeightLight: 100;
+$fontWeightSemiLight: 300;
+$fontWeightNormal: 400;
+$fontWeightMedium: 600;
+$fontWeightBold: 800;
+$fontWeightExtraBold: 900;
+
 // Colors
 $colorMain: #fff;
 $colorBlue: #1778d9;
+$colorLightBlue: #3593f0;
 $colorAlt: #000;
 $colorTextGrayLighter: #f2f2f6;
 $colorTextGrayLight: #737373;
