@@ -25,16 +25,3 @@ Jesteśmy otwarci na wszelkie sugestie i współpracę. Jeśli chcesz się przy�
 Dziękujemy wszystkim, którzy przyczynili się do powstania i rozwoju tego projektu.
 
 ---
-
-
-#### Wymagania Systemowe
-
-* Node.js v14.21.3
-
-#### Informacje
-
-Skompilowane pliki znajdują się w katalogu `/dist`.
-
-#### Developerka
-
-Instalacja pakietów
